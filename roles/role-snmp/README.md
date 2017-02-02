@@ -1,7 +1,7 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+ESTE ROL SE AUTODESTRUIRÁ EN 10 SEGUNDOS
 
 Requirements
 ------------
