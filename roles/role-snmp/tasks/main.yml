@@ -13,5 +13,5 @@
      notify:
        - restarted
 
-   - name: Parada snmpd
+   - name: restart snmpd
      service: name=snmpd state=restarted

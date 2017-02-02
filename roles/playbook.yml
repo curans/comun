@@ -1,4 +1,0 @@
----
-- hosts: clientes 
-  roles: 
-    - role-snmp
