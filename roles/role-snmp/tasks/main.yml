@@ -1,2 +1,26 @@
 ---
 # tasks file for role-snmp
+
+   - name: Instalacion snmp
+     yum: 
+       name="net-snmp"
+       state=present
+       update_cache=yes
+      
+   - name: add server al hosts
+     lineinfile: 
+       dest=/etc/hosts
+       line="1.1.1.1 S2argos"
+
+   - name: copiar snmp.conf desde template
+     template: src=snmpd.conf.j2
+               dest=/etc/snmp/snmpd.conf
+               owner=root
+               group=root
+               mode=0644
+
+     notify:
+       - start snmpd
+
+   - name: stop service snmpd
+     service: name=snmpd state=stopped
