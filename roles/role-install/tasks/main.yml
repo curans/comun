@@ -1,0 +1,5 @@
+---
+# tasks file for role-install
+   - name: Install telnet package
+     yum: name=telnet
+          state=latest
