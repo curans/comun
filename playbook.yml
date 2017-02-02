@@ -1,0 +1,5 @@
+---
+- hosts: redhat
+  roles: 
+    - role-install
+    - role-snmp

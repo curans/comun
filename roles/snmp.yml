@@ -1,4 +1,0 @@
----
-- hosts: redhat
-  roles:
-    - role-snmp
