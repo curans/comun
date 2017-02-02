@@ -1,2 +1,3 @@
 ---
 # defaults file for role-snmp
+snmp_community: public
