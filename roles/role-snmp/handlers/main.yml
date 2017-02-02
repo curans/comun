@@ -1,2 +1,17 @@
 ---
 # handlers file for role-snmp
+
+   - name: start snmp
+     service: name=snmpd state=started enabled=yes
+
+   - name: stop snmp
+     service: name=snmpd state=stopped
+
+   - name: reload snmp
+     service: name=snmpd state=reloaded
+
+   - name: restart snmp
+     service: name=snmpd state=restarted
+
+   - name: enable snmp
+     service: enabled=yes
