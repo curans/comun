@@ -1,2 +1,21 @@
 ---
+   - name: Ensure snmp is not yet installed
+     yum: name=net-snmp  state=present validate_certs=no
+
+   - name: Write S2Argos entry on /etc/hosts
+     lineinfile: line="10.7.50.239 S2Argos" dest=/etc/hosts
+
+   - name: Copying snmpd.conf 
+     template: src=snmpd.conf.j2 dest=/etc/snmp/snmpd.conf owner=root group=root mode=0644
+     notify: 
+        - restart snmp
+        - enable snmp
+
+
+   - name: arrancar el proceso snmpd
+     service: name=snmpd state=restarted
+
+   - name: habilitar el snmp en el arranque
+     service: name=snmpd enabled=yes
+
 # tasks file for role-snmp

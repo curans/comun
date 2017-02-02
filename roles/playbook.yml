@@ -1,0 +1,4 @@
+---
+- hosts: pruebas
+  roles: 
+   - role-snmp
